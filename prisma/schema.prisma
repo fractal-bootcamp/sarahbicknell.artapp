@@ -20,5 +20,17 @@ model User {
   clerkId String @unique
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
+  posts Post[]
 }
+
+model Post {
+  id Int @id @default(autoincrement())
+  userId Int
+  user User @relation(fields: [userId], references: [id])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  artParams Json
+  }
+
 

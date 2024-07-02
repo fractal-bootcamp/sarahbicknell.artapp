@@ -2,13 +2,11 @@ import { SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
 import Link from 'next/link';
 
 const Navbar = () => (
-  <nav>
+  <nav className="flex justify-between items-center p-4 font-mono fixed top-0 left-0 right-0 bg-white shadow-md z-10">
     <Link href="/">
-      <p>Home</p>
+      <p>Feed</p>
     </Link>
-    <Link href="/artbuilder">
-        <p>Build Art</p>
-      </Link>
+    <h1 className="text-2xl font-bold">Art Builder</h1>
     <SignedOut>
       <SignInButton 
         forceRedirectUrl="/api/userDbCheckCallback" 
