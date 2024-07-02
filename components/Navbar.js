@@ -1,4 +1,4 @@
-import { SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
+import { SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
 import Link from 'next/link';
 
 const Navbar = () => (
@@ -10,9 +10,9 @@ const Navbar = () => (
         <p>Build Art</p>
       </Link>
     <SignedOut>
-      <Link href="/login">
-        <p>Login/Signup</p>
-      </Link>
+      <SignInButton 
+        forceRedirectUrl="/api/userDbCheckCallback" 
+        signUpForceRedirectUrl="/api/userDbCheckCallback" />
     </SignedOut>
     <SignedIn>
       <UserButton />
