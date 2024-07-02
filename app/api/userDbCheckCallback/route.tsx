@@ -47,7 +47,7 @@ export async function GET(request: NextRequest) {
       console.log("User already exists in database");
     }
 
-    redirect('/');
+    return NextResponse.redirect(new URL('/', request.url));
   } catch (error) {
     console.error("Error in sign-up callback:", error);
     return NextResponse.json({ error: "An error occurred" }, { status: 500 });
