@@ -1,4 +1,3 @@
-// components/Navbar.js
 import { SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
 import Link from 'next/link';
 
@@ -7,15 +6,15 @@ const Navbar = () => (
     <Link href="/">
       <p>Home</p>
     </Link>
+    <Link href="/artbuilder">
+        <p>Build Art</p>
+      </Link>
     <SignedOut>
       <Link href="/login">
         <p>Login/Signup</p>
       </Link>
     </SignedOut>
     <SignedIn>
-      <Link href="/art-builder">
-        <p>Build Art</p>
-      </Link>
       <UserButton />
     </SignedIn> 
   </nav>

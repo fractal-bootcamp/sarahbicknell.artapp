@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ClerkProvider frontendApi="pk_test_c3BlY2lhbC1jaGlnZ2VyLTIwLmNsZXJrLmFjY291bnRzLmRldiQ">
+        <ClerkProvider >
           <Navbar />
           {children}
         </ClerkProvider>
