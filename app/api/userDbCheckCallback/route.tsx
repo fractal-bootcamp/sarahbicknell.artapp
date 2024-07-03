@@ -1,7 +1,6 @@
 import { currentUser, auth } from "@clerk/nextjs/server";
 import { NextRequest, NextResponse } from "next/server";
 import client from "@/client";
-import { redirect } from "next/navigation";
 
 //on sign in/up, checks if clerkauthed user is in the DB, if not adds to db, then redriecteds to home page 
 
@@ -47,7 +46,9 @@ export async function GET(request: NextRequest) {
       console.log("User already exists in database");
     }
 
+    // elipsis dev tells me it's important to use server side redirects
     return NextResponse.redirect(new URL('/', request.url));
+
   } catch (error) {
     console.error("Error in sign-up callback:", error);
     return NextResponse.json({ error: "An error occurred" }, { status: 500 });

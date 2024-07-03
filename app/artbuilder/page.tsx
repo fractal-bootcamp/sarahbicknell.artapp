@@ -20,8 +20,7 @@ export default function ArtBuilderPage() {
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
-          color: artParams.color,
-          text: artParams.text
+          artParams: artParams
         })
       });
 
