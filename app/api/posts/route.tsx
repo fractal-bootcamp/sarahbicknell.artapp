@@ -2,6 +2,19 @@ import { NextRequest, NextResponse } from 'next/server';
 import client from '@/client';
 import { getAuth } from '@clerk/nextjs/server';
 
+export async function GET() {
+  try {
+    const posts = await client.post.findMany({
+      orderBy: { createdAt: 'desc' },
+      include: { user: true }, // pulls out user data from the related user table too
+    });
+    return NextResponse.json(posts);
+  } catch (error) {
+    console.error('Error fetching posts:', error);
+    return NextResponse.json({ error: 'Error fetching posts' }, { status: 500 });
+  }
+}
+
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
@@ -46,6 +59,3 @@ export async function POST(req: NextRequest) {
   }
 }
 
-export async function GET() {
-  return NextResponse.json({ error: 'Method not allowed' }, { status: 405 });
-}

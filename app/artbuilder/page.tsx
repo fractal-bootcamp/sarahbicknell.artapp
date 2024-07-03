@@ -14,7 +14,7 @@ export default function ArtBuilderPage() {
     if (!user) return 
 
     try{
-      const response = await fetch("/api/posts/create", {
+      const response = await fetch("/api/posts", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
