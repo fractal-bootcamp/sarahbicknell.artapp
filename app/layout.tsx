@@ -18,13 +18,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <ClerkProvider >
-          <Navbar />
-          {children}
+        <ClerkProvider publishableKey="pk_test_c3BlY2lhbC1jaGlnZ2VyLTIwLmNsZXJrLmFjY291bnRzLmRldiQ">      
+          <html lang="en">
+            <body className={inter.className}>
+                <Navbar />
+                {children}
+            </body>
+          </html>
         </ClerkProvider>
-      </body>
-    </html>
   );
 }
+
