@@ -1,5 +1,4 @@
-import { clerkMiddleware,   createRouteMatcher
-} from '@clerk/nextjs/server';
+import { clerkMiddleware, createRouteMatcher} from '@clerk/nextjs/server';
 
 const isProtectedRoute = createRouteMatcher([
   '/artbuilder(.*)',
@@ -10,5 +9,5 @@ export default clerkMiddleware((auth, req) => {
 });
 
 export const config = {
-  matcher: ['/artbuilder/:path*'],
+  // matcher: ['/((?!.*\\..*|_next).*)', '/', '/(api|trpc)(.*)'],
 };

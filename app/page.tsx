@@ -1,9 +1,24 @@
-import Image from "next/image";
+"use client"
+import { useState, useEffect } from "react";
+import ArtPost from "@/components/ArtPost";
+import { getPosts } from "@/lib/getPosts";
 
-export default function Home() {
+
+export default function ArtFeed() {
+  const [posts, setPosts] = useState<any[]>([]);
+
+  //gets posts from database on mount
+  useEffect(() => {
+    getPosts().then(setPosts).catch(console.error)
+  }, [])
+
   return (
-    <div>
-      My Art Feed
+    <div className="flex flex-col items-center justify-center">
+      <div> 
+        {posts.map((post) => (
+          <ArtPost key={post.id} {...post} username={post.user.name} />
+        ))}
+      </div>
     </div>
   );
 }
