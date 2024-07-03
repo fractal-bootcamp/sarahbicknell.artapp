@@ -14,7 +14,6 @@ export default function ArtFeed() {
 
   return (
     <div className="flex flex-col items-center justify-center">
-      <div className="pb-1">My Art Feed</div>
       <div> 
         {posts.map((post) => (
           <ArtPost key={post.id} {...post} username={post.user.name} />
