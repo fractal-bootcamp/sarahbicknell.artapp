@@ -37,14 +37,21 @@ export default function ArtBuilderPage() {
 
   return (
     <div className="flex flex-col items-center justify-center font-mono">
-      <div className="pb-1">
+      <div className="pb-4 text-2xl">
         My Art Maker
       </div>
-      <div> 
+      <div className="pb-4"> 
         <div style={{backgroundColor: artParams.color}} className=" text-white w-[200px] h-[200px]"> {artParams.text} </div>
       </div>
-      <div>
-        <input type="color" value={artParams.color} onChange={(event) => setArtParams({...artParams, color: event.target.value})}/>
+      <div className="flex flex-col justify-center items-center gap-2 pb-4">
+        <label>
+          Choose color:&nbsp;
+          <input type="color" value={artParams.color} onChange={(event) => setArtParams({...artParams, color: event.target.value})} style={{ width: "100px" }}/>
+        </label>
+        <label>
+          Choose text:&nbsp;
+          <input type="text" value={artParams.text} onChange={(event) => setArtParams({...artParams, text: event.target.value})} className="border rounded, w-[100px]" />
+        </label>
       </div>
       <div> 
         <button className="bg-blue-500 text-white p-2 rounded-md" onClick={handleSave}>Save</button>
