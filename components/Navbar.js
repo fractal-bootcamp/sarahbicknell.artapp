@@ -10,7 +10,9 @@ const Navbar = () => (
     <SignedOut>
       <SignInButton 
         forceRedirectUrl="/api/userDbCheckCallback" 
-        signUpForceRedirectUrl="/api/userDbCheckCallback" />
+        signUpForceRedirectUrl="/api/userDbCheckCallback">
+          <button>Sign In</button>
+      </SignInButton>
     </SignedOut>
     <SignedIn>
       <UserButton />
