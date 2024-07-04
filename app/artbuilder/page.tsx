@@ -1,7 +1,7 @@
 "use client"
 import { useState } from "react";
 import { useUser } from "@clerk/nextjs";
-
+import { useRouter } from "next/navigation";
 
 export default function ArtBuilderPage() {
   const [artParams, setArtParams] = useState({
@@ -9,6 +9,7 @@ export default function ArtBuilderPage() {
     text: "(•‿•)"
   });
   const {user} = useUser()
+  const router = useRouter();
 
   async function handleSave() {
     if (!user) return 
@@ -26,6 +27,7 @@ export default function ArtBuilderPage() {
 
       if (response.ok) {
         console.log("Art saved successfully");
+        router.push("/");
       } else {
         const errorText = await response.text();
         console.error("Error saving art:", response.status, errorText);

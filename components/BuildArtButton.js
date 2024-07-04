@@ -1,5 +1,6 @@
 import Link from 'next/link';
 
+
 const BuildArtButton = () => (
   <div className="fixed bottom-4 right-4 font-mono">
     <Link href="/artbuilder">

@@ -4,7 +4,6 @@ interface ArtPostProps {
       text: string;
     };
     createdAt: string;
-    userId: number;
     user: {
       username: string;
     }
