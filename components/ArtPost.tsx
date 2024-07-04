@@ -12,7 +12,7 @@ interface ArtPostProps {
   
   export default function ArtPost({ artParams, createdAt, user}: ArtPostProps) {
     return (
-      <div className="border rounded-lg p-4 mb-4">
+      <div className="border rounded-lg p-4 mb-4 shadow-lg">
         <p>{user.username}</p>
       <div> 
         <div style={{backgroundColor: artParams.color}} className=" text-white w-[300px] h-[300px]"> {artParams.text} </div>
