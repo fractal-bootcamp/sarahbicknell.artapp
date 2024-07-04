@@ -47,7 +47,7 @@ export async function GET(request: NextRequest) {
     }
 
     // elipsis dev tells me it's important to use server side redirects
-    return NextResponse.redirect(new URL('/', request.url));
+    return NextResponse.redirect(new URL('/artbuilder', request.url));
 
   } catch (error) {
     console.error("Error in sign-up callback:", error);
