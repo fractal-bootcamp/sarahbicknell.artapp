@@ -1,15 +1,6 @@
-interface ArtPostProps {
-    artParams: {
-      color: string;
-      text: string;
-    };
-    createdAt: string;
-    user: {
-      username: string;
-    }
-  }
-  
-  export default function ArtPost({ artParams, createdAt, user}: ArtPostProps) {
+import { PostWithUser } from "@/types/prisma.types";
+
+  export default function ArtPost({user, artParams, createdAt}: PostWithUser) {
     return (
       <div className="border rounded-lg p-4 mb-4 shadow-lg">
         <p>{user.username}</p>
